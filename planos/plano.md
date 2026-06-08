@@ -43,6 +43,25 @@ Agentes principais: MAESTRO, ALURA e UDEMY (os 2 últimos, sub-agentes).
 
 ## Estrutura de Diretórios
 
+O diretório principal é o `especIAlize-se/`.
+Dentro dele, encontram-se os seguintes diretórios e arquivos:
+- `AGENT.md`
+- `personas/`: 
+  - `maestro.md`
+  - `alura.md`
+  - `udemy.md`
+- `skills/`:
+  - `firecrawl.md`
+  - `dispatch.md`
+  - `analise-cursos-alura.md`
+  - `analise-cursos-udemy.md`
+- `dados/`:
+  - `recomendacoes-alura[-assunto].md`
+  - `recomendacoes-udemy[-assunto].md`
+- `scripts/`
+- `README.md`
+
+Abaixo, um resumo da estrutura de diretórios.
 ```
 especIAlize-se/
 ├── AGENT.md                              # Instruções de inicialização para o agente
