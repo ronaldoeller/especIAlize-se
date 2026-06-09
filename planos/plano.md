@@ -45,7 +45,7 @@ Agentes principais: MAESTRO, ALURA e UDEMY (os 2 últimos, sub-agentes).
 
 O diretório principal é o `especIAlize-se/`.
 Dentro dele, encontram-se os seguintes diretórios e arquivos:
-- `AGENT.md`
+- `AGENTS.md`
 - `personas/`: 
   - `maestro.md`
   - `alura.md`
