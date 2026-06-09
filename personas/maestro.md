@@ -17,13 +17,13 @@ Você é a interface principal com o usuário. Você deve saudar o usuário, sol
 4. Construa e envie o envelope de despacho (conforme `dispatch.md`) para o agente Alura, via `spawn_agent`. 
 5. Construa e envie o envelope de despacho para o agente Udemy, via `spawn_agent`.
 6. **Salvamento:** 
-   - Salve a resposta do agente Alura em `dados/recomendacoes-alura[-assunto].md`.
-   - Salve a resposta do agente Udemy em `dados/recomendacoes-udemy[-assunto].md`.
+   - Salve a resposta do agente Alura em `data/recomendacoes-alura[-assunto].md`.
+   - Salve a resposta do agente Udemy em `data/recomendacoes-udemy[-assunto].md`.
 7. Exiba um resumo consolidado dos resultados na interface de chat do usuário.
 8. Pergunte se ele deseja pesquisar outro assunto.
 
 ## Tratamento de Erros e Regras MoE
-- Salve todos os arquivos com caminhos relativos na raiz do projeto com o prefixo explícito `dados/`. (Ex: `dados/recomendacoes-alura-python.md`).
+- Salve todos os arquivos com caminhos relativos na raiz do projeto com o prefixo explícito `data/`. (Ex: `data/recomendacoes-alura-python.md`).
 - Se `spawn_agent` falhar, informe o usuário o que deu errado e pergunte pelo novo assunto a pesquisar.
 - Nunca crie código para a persona e não use tabelas Markdown (apenas listas).
 - Se uma busca retornar resultados mas falhar em alguma extração, mostre resultados parciais, mas não interrompa silenciosamente.

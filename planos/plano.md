@@ -10,7 +10,7 @@ Todas as personas e skills são projetadas para modelos Mixture of Experts (MoE)
 
 - Sem instruções ambíguas. Cada passo deve especificar exatamente o que fazer, qual ferramenta usar e qual formato de saída produzir.
 - Sem tabelas markdown em nenhuma saída. Use listas numeradas com pares chave-valor para dados estruturados.
-- Todos os caminhos de arquivo devem ser relativos à raiz do projeto com prefixo explícito `dados/`. A raiz do projeto é o diretório `especIAlize-se/`.
+- Todos os caminhos de arquivo devem ser relativos à raiz do projeto com prefixo explícito `data/`. A raiz do projeto é o diretório `especIAlize-se/`.
 - Se uma ferramenta falhar, o agente deve relatar a falha no campo `erros` e não continuar silenciosamente.
 - Nunca invente dados. Se um `firecrawl search` ou `firecrawl scrape` falhar, reporte o erro exato e pare. **Exceções**: Em `skills/analise-cursos-udemy.md` e `skills/analise-cursos-alura.md`, se a busca falhar para uma habilidade específica, tente o fallback; se o fallback também falhar, pule essa habilidade e continue com as restantes. Não pare o processamento inteiro por uma única falha de busca de cursos.
 - O agente NÃO deve escrever scripts Python, scripts de shell ou qualquer código para implementar personas. O agente personifica cada papel diretamente através do seu comportamento e respostas conversacionais. Personas são instruções comportamentais, não código a ser gerado.
@@ -55,7 +55,7 @@ Dentro dele, encontram-se os seguintes diretórios e arquivos:
   - `dispatch.md`
   - `analise-cursos-alura.md`
   - `analise-cursos-udemy.md`
-- `dados/`:
+- `data/`:
   - `recomendacoes-alura[-assunto].md`
   - `recomendacoes-udemy[-assunto].md`
 - `scripts/`
@@ -74,7 +74,7 @@ especIAlize-se/
 │   ├── dispatch.md                       # Despacho de agentes e protocolo de handoff
 │   ├── analise-cursos-alura.md           # Capacidade de análise de cursos na Alura
 │   └── analise-cursos-udemy.md           # Capacidade de análise de cursos na Udemy
-├── dados/
+├── data/
 │   ├── recomendacoes-alura[-assunto].md  # Recomendações de cursos na Alura, com o assunto como sufixo no nome do arquivo
 │   └── recomendacoes-udemy[-assunto].md  # Recomendações de cursos na Udemy, com o assunto como sufixo no nome do arquivo
 ├── scripts/
@@ -108,8 +108,8 @@ em `skills/dispatch.md`.
 2. Solicitar o assunto a ter os cursos pesquisados
 3. Delegar ao agente Alura a pesquisa dos 10 cursos mais bem avaliados na Alura, via `spawn_agent`
 4. Delegar ao agente Udemy a pesquisa dos 10 cursos mais bem avaliados na Udemy, via `spawn_agent`
-5. Salvar resposta do agente Alura em `dados/recomendacoes-alura[-assunto].md`
-6. Salvar resposta do agente Udemy em `dados/recomendacoes-udemy[-assunto].md`
+5. Salvar resposta do agente Alura em `data/recomendacoes-alura[-assunto].md`
+6. Salvar resposta do agente Udemy em `data/recomendacoes-udemy[-assunto].md`
 7. Exibir os resultados consolidados ao usuário
 8. Perguntar se deseja pesquisar outro assunto
 
@@ -139,7 +139,7 @@ em `skills/dispatch.md`.
 - Assunto especificado pelo usuário
 
 **Saídas**:
-- Retornar resultados ao Maestro via Envelope de Resposta (Maestro salva em `dados/recomendacoes-alura[-assunto].md`)
+- Retornar resultados ao Maestro via Envelope de Resposta (Maestro salva em `data/recomendacoes-alura[-assunto].md`)
 - Listar até 10 cursos com nome, duração, nível e link
 - Ordenar (cursos mais bem avaliados primeiro)
 
@@ -169,13 +169,13 @@ em `skills/dispatch.md`.
 - Assunto especificado pelo usuário
 
 **Saídas**:
-- Retornar resultados ao Maestro via Envelope de Resposta (Maestro salva em `dados/recomendacoes-udemy[-assunto].md`)
+- Retornar resultados ao Maestro via Envelope de Resposta (Maestro salva em `data/recomendacoes-udemy[-assunto].md`)
 - Listar até 10 cursos com nome, duração, nível, preço e link
 - Ordenar (cursos mais bem avaliados primeiro)
 
 ## Esquemas dos Arquivos de Dados
 
-### dados/recomendacoes-alura[-assunto].md
+### data/recomendacoes-alura[-assunto].md
 
 Armazena os 10 cursos mais bem avaliados da Alura, associados ao assunto especificado pelo usuário:
 
@@ -193,7 +193,7 @@ Cursos:
 2. [próximo curso no mesmo formato]
 ```
 
-### dados/recomendacoes-udemy[-assunto].md
+### data/recomendacoes-udemy[-assunto].md
 
 Armazena os 10 cursos mais bem avaliados da Udemy, associados ao assunto especificado pelo usuário:
 

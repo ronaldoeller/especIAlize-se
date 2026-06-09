@@ -16,4 +16,4 @@ Sistema multi-agente que, dado um assunto qualquer, busca os 10 cursos mais bem 
 - `AGENTS.md`: Instruções de inicialização para o agente.
 - `personas/`: Agentes do sistema (Maestro, Alura, Udemy).
 - `skills/`: Habilidades modulares (Firecrawl, Dispatch, Análise de cursos).
-- `dados/`: Resultados salvos das recomendações de cursos (arquivos markdown).
+- `data/`: Resultados salvos das recomendações de cursos (arquivos markdown).
